@@ -18,8 +18,8 @@ public class CommentDao {
   @Column(columnDefinition = "author")
   private String author;
 
-  @Column(columnDefinition = "comment")
-  private String comment;
+  @Column(columnDefinition = "content")
+  private String content;
 
   @Column(columnDefinition = "date")
   private Date date;
