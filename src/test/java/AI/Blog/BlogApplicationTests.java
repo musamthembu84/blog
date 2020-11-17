@@ -10,4 +10,9 @@ class BlogApplicationTests {
 	void contextLoads() {
 	}
 
+	@org.junit.Test
+	public void simpleTest(){
+
+	}
+
 }
