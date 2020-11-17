@@ -1,4 +1,4 @@
-package AI.Blog.security;
+package AI.Blog.service;
 
 public interface IComment {
 }
