@@ -1,6 +1,5 @@
 package AI.Blog.model;
 
-
 import javax.persistence.*;
 import java.util.Date;
 
