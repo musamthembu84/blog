@@ -17,8 +17,8 @@ public class PostService implements IPost{
     }
 
     @Override
-    public ResponseEntity<Object> postMessage(PostDao postDao) {
+    public ResponseEntity<String> postMessage(PostDao postDao) {
         postRepository.save(postDao);
-        return null;
+        return ResponseEntity.ok("");
     }
 }
