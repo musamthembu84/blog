@@ -1,5 +1,6 @@
 package AI.Blog.service;
 
+import AI.Blog.exception.ValidationException;
 import AI.Blog.model.PostDao;
 import AI.Blog.repository.PostRepository;
 import AI.Blog.response.SuccessMessageResponse;
