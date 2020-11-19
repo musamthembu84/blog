@@ -4,5 +4,5 @@ import AI.Blog.model.PostDao;
 import org.springframework.http.ResponseEntity;
 
 public interface IPost {
-    ResponseEntity<String> postMessage(PostDao postDao);
+    ResponseEntity<Object> postMessage(PostDao postDao);
 }

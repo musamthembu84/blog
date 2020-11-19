@@ -19,10 +19,10 @@ dependencies {
 	implementation 'org.springframework.data:spring-data-jpa:2.3.0.RELEASE'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'junit:junit:4.12'
+	implementation 'com.google.guava:guava:28.2-jre'
 	testCompile group: 'com.h2database', name: 'h2', version: '1.4.200'
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-
 		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 }
