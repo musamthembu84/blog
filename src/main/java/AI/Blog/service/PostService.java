@@ -22,7 +22,7 @@ public class PostService implements IPost{
     }
 
     @Override
-    public ResponseEntity<Object> postMessage(final PostDao postDao) {
+    public ResponseEntity<Object> createPost(final PostDao postDao) {
         Preconditions.checkArgument(postDao.getContent()!=null);
 
         postRepository.save(postDao);

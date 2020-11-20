@@ -7,8 +7,8 @@ import java.util.Date;
 @Table(name = "Post")
 public class PostDao {
 
-    public PostDao(final int id,final String content,final  int views,
-                   final Date creationDate,final Date updatedDate, final int like) {
+    public PostDao(final int id,final String content,final int views,
+                   final Date creationDate,final Date updatedDate, final LikesDao like) {
         this.id = id;
         this.content = content;
         this.views = views;
@@ -36,14 +36,15 @@ public class PostDao {
     @Column(columnDefinition = "updatedDate")
     private Date updatedDate;
 
-    @Column(columnDefinition = "likes")
-    private int like;
+    //@Column(columnDefinition = "likes")
+    @OneToOne(mappedBy = "Post")
+    private LikesDao like;
 
-    public int getLike() {
+    public LikesDao getLike() {
         return like;
     }
 
-    public void setLike(int like) {
+    public void setLike(LikesDao like) {
         this.like = like;
     }
 
