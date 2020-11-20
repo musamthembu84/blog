@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 public class PostService implements IPost{
 
     private static final String SUCCESS_MESSAGE = "Post Created Successfully";
+    private static final String DELETE_MESSAGE = "Post Deleted Successfully";
 
     private final PostRepository postRepository;
 
@@ -32,6 +33,7 @@ public class PostService implements IPost{
     @Override
     public ResponseEntity<Object> deletePost(final int postID) {
         postRepository.deleteById(postID);
-        return null;
+        return ResponseEntity
+                .ok(SuccessMessageResponse.create(DELETE_MESSAGE));
     }
 }

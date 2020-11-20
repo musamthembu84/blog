@@ -7,12 +7,14 @@ import java.util.Date;
 @Table(name = "Post")
 public class PostDao {
 
-    public PostDao(int id, String content, int views, Date creationDate, Date updatedDate) {
+    public PostDao(final int id,final String content,final  int views,
+                   final Date creationDate,final Date updatedDate, final int like) {
         this.id = id;
         this.content = content;
         this.views = views;
         this.creationDate = creationDate;
         this.updatedDate = updatedDate;
+        this.like = like;
     }
 
     public PostDao() {
@@ -33,6 +35,17 @@ public class PostDao {
 
     @Column(columnDefinition = "updatedDate")
     private Date updatedDate;
+
+    @Column(columnDefinition = "likes")
+    private int like;
+
+    public int getLike() {
+        return like;
+    }
+
+    public void setLike(int like) {
+        this.like = like;
+    }
 
     public int getId() {
         return id;
