@@ -1,6 +1,5 @@
 package AI.Blog.service;
 
-import AI.Blog.exception.ValidationException;
 import AI.Blog.model.PostDao;
 import AI.Blog.repository.PostRepository;
 import AI.Blog.response.SuccessMessageResponse;
@@ -12,6 +11,8 @@ import org.springframework.stereotype.Service;
 @Service
 public class PostService implements IPost{
 
+    private static final String SUCCESS_MESSAGE = "Post Created Successfully";
+
     private final PostRepository postRepository;
 
     @Autowired
@@ -20,11 +21,17 @@ public class PostService implements IPost{
     }
 
     @Override
-    public ResponseEntity<Object> postMessage(PostDao postDao) {
+    public ResponseEntity<Object> postMessage(final PostDao postDao) {
         Preconditions.checkArgument(postDao.getContent()!=null);
 
         postRepository.save(postDao);
         return ResponseEntity
-                .ok(SuccessMessageResponse.create("Post Created Successfully"));
+                .ok(SuccessMessageResponse.create(SUCCESS_MESSAGE));
+    }
+
+    @Override
+    public ResponseEntity<Object> deletePost(final int postID) {
+        postRepository.deleteById(postID);
+        return null;
     }
 }
