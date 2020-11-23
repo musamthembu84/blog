@@ -5,6 +5,15 @@ import javax.persistence.*;
 @Table(name = "Likes")
 public class LikesDao {
 
+    public LikesDao(int count, PostDao postDao) {
+        this.id = id;
+        this.count = count;
+        this.postDao = postDao;
+    }
+
+    public LikesDao() {
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
