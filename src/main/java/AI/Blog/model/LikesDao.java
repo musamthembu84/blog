@@ -1,5 +1,4 @@
 package AI.Blog.model;
-
 import javax.persistence.*;
 
 @Entity
