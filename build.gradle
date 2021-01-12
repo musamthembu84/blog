@@ -20,6 +20,8 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'junit:junit:4.12'
 	implementation 'com.google.guava:guava:28.2-jre'
+    implementation 'io.springfox:springfox-swagger-ui:2.9.2'
+
 	testCompile group: 'com.h2database', name: 'h2', version: '1.4.200'
 
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
