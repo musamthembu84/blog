@@ -7,6 +7,11 @@ import java.util.Date;
 @Table(name = "Post")
 public class PostDao {
 
+
+
+    public PostDao() {
+    }
+
     public PostDao(final int id,final String content,final int views,
                    final Date creationDate,final Date updatedDate) {
         this.id = id;
@@ -14,9 +19,6 @@ public class PostDao {
         this.views = views;
         this.creationDate = creationDate;
         this.updatedDate = updatedDate;
-    }
-
-    public PostDao() {
     }
 
     @Id
