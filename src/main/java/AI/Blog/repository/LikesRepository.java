@@ -6,9 +6,10 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+//extends CrudRepository<LikesDao,Integer>
 @Repository
-public interface LikesRepository extends CrudRepository<LikesDao,Integer> {
+public interface LikesRepository {
 
-    @Query("select u from LikesDao u where u.postDao =:postId")
-    int getLikesForPost(@Param("postDao") final int postId);
+//    @Query("select u from LikesDao u where u.postDao =:postId")
+//    int getLikesForPost(@Param("postDao") final int postId);
 }

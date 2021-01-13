@@ -3,11 +3,11 @@ package AI.Blog.model;
 import javax.persistence.*;
 import java.util.Date;
 
-@Entity
-@Table(name = "Comment")
+//@Entity
+//@Table(name = "Comment")
 public class CommentDao {
 
-  @Id
+  /*@Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private int id;
 
@@ -23,4 +23,6 @@ public class CommentDao {
   @Column(columnDefinition = "date")
   private Date date;
 
+
+   */
 }

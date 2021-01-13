@@ -8,13 +8,12 @@ import java.util.Date;
 public class PostDao {
 
     public PostDao(final int id,final String content,final int views,
-                   final Date creationDate,final Date updatedDate, final LikesDao like) {
+                   final Date creationDate,final Date updatedDate) {
         this.id = id;
         this.content = content;
         this.views = views;
         this.creationDate = creationDate;
         this.updatedDate = updatedDate;
-        this.like = like;
     }
 
     public PostDao() {
@@ -36,35 +35,43 @@ public class PostDao {
     @Column(columnDefinition = "updatedDate")
     private Date updatedDate;
 
-    //@Column(columnDefinition = "likes")
-    @OneToOne(mappedBy = "Post")
-    private LikesDao like;
-
-    public LikesDao getLike() {
-        return like;
-    }
-
-    public void setLike(LikesDao like) {
-        this.like = like;
-    }
-
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getContent() {
         return content;
     }
 
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     public int getViews() {
         return views;
+    }
+
+    public void setViews(int views) {
+        this.views = views;
     }
 
     public Date getCreationDate() {
         return creationDate;
     }
 
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
     public Date getUpdatedDate() {
         return updatedDate;
+    }
+
+    public void setUpdatedDate(Date updatedDate) {
+        this.updatedDate = updatedDate;
     }
 }

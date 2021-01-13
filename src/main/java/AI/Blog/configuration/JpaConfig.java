@@ -23,13 +23,22 @@ public class JpaConfig {
         this.env = env;
     }
 
+    @Bean
+    public DataSource dataSource() {
+        DriverManagerDataSource dataSource = new DriverManagerDataSource();
+        dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+        dataSource.setUrl("jdbc:mysql://localhost:3306");
+        dataSource.setUsername( "musa" );
+        dataSource.setPassword( "Streetwise22@22");
+        return dataSource;
+    }
 //    @Bean
 //    public DataSource dataSource(){
 //        DriverManagerDataSource dataSource = new DriverManagerDataSource();
-//        dataSource.setDriverClassName(Objects.requireNonNull(env.getProperty("jdbc.driverClassName")));
+//        dataSource.setDriverClassName(Objects.requireNonNull(env.getProperty("jdbc.driver-class-name")));
 //        dataSource.setUrl(env.getProperty("jdbc.url"));
-//        dataSource.setUsername(env.getProperty("jdbc.user"));
-//        dataSource.setPassword(env.getProperty("jdbc.pass"));
+//        dataSource.setUsername(env.getProperty("jdbc.username"));
+//        dataSource.setPassword(env.getProperty("jdbc.password"));
 //
 //        return dataSource;
 //    }
