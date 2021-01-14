@@ -5,7 +5,7 @@ import AI.Blog.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 
-import java.util.Date;
+import java.sql.Date;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
@@ -20,7 +20,7 @@ public class RestController {
     @GetMapping(value = "/test")
     public String testValues(){
 
-        postService.createPost(new PostDao(1,"testing",0,new Date(),new Date()));
+        postService.createPost(new PostDao("musa_got_this",0,new Date(14/01/2020), new Date(14/01/2020)));
         return "haha";
     }
 }

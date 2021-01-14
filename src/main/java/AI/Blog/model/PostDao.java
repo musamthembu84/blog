@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "Post")
+@Table(name = "myblog")
 public class PostDao {
 
 
@@ -12,13 +12,13 @@ public class PostDao {
     public PostDao() {
     }
 
-    public PostDao(final int id,final String content,final int views,
-                   final Date creationDate,final Date updatedDate) {
+    public PostDao(final String content,final int views,
+                   final Date creationDate,final Date postUpdatedDate) {
         this.id = id;
         this.content = content;
         this.views = views;
-        this.creationDate = creationDate;
-        this.updatedDate = updatedDate;
+        this.postCreationDate = creationDate;
+        this.postUpdatedDate = postUpdatedDate;
     }
 
     @Id
@@ -31,11 +31,11 @@ public class PostDao {
     @Column(columnDefinition = "views")
     private int views;
 
-    @Column(columnDefinition = "creationDate")
-    private Date creationDate;
+    @Column(columnDefinition = "postCreationDate")
+    private Date postCreationDate;
 
-    @Column(columnDefinition = "updatedDate")
-    private Date updatedDate;
+    @Column(columnDefinition = "postUpdatedDate")
+    private Date postUpdatedDate;
 
     public int getId() {
         return id;
@@ -61,19 +61,19 @@ public class PostDao {
         this.views = views;
     }
 
-    public Date getCreationDate() {
-        return creationDate;
+    public Date getPostCreationDate() {
+        return postCreationDate;
     }
 
-    public void setCreationDate(Date creationDate) {
-        this.creationDate = creationDate;
+    public void setPostCreationDate(Date postCreationDate) {
+        this.postCreationDate = postCreationDate;
     }
 
-    public Date getUpdatedDate() {
-        return updatedDate;
+    public Date getPostUpdatedDate() {
+        return postUpdatedDate;
     }
 
-    public void setUpdatedDate(Date updatedDate) {
-        this.updatedDate = updatedDate;
+    public void setPostUpdatedDate(Date updatedDate) {
+        this.postUpdatedDate = updatedDate;
     }
 }
