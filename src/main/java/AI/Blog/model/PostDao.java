@@ -32,5 +32,7 @@ public class PostDao {
     @Column(columnDefinition = "postUpdatedDate")
     private Date postUpdatedDate;
 
-
+    public String getContent() {
+        return content;
+    }
 }
