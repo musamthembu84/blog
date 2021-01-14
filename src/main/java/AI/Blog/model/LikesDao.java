@@ -1,27 +1,14 @@
 package AI.Blog.model;
+
 import javax.persistence.*;
 
-//@Entity
-//@Table(name = "Likes")
+@Entity
 public class LikesDao {
-//
-//    public LikesDao(int count) {
-//        this.id = id;
-//        this.count = count;
-////        this.postDao = postDao;
-//    }
-//
-//    public LikesDao() {
-//    }
-//
-//    @Id
-//    @GeneratedValue(strategy = GenerationType.AUTO)
-//    private int id;
-//
-//    @Column(columnDefinition = "count")
-//    private int count;
-//
-//    @OneToOne(cascade = CascadeType.ALL)
-//    @JoinColumn(name = "postID",referencedColumnName = "id")
-//    private PostDao postDao;
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    @Column(nullable = false)
+    private int counter;
 }
