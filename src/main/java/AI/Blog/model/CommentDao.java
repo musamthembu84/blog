@@ -1,28 +1,22 @@
 package AI.Blog.model;
 
 import javax.persistence.*;
-import java.util.Date;
 
-//@Entity
-//@Table(name = "Comment")
+@Entity
 public class CommentDao {
 
-  /*@Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
-  private int id;
+    public CommentDao() {
+    }
 
-  @Column(columnDefinition = "title")
-  private String title;
+    public CommentDao(Integer id, String commentContent) {
+        this.id = id;
+        this.commentContent = commentContent;
+    }
 
-  @Column(columnDefinition = "author")
-  private String author;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
 
-  @Column(columnDefinition = "content")
-  private String content;
-
-  @Column(columnDefinition = "date")
-  private Date date;
-
-
-   */
+    @Column(nullable = false)
+    private String commentContent;
 }
