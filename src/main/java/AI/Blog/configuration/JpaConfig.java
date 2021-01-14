@@ -30,6 +30,7 @@ public class JpaConfig {
         dataSource.setUrl("jdbc:mysql://localhost:3306/db_test");
         dataSource.setUsername( "jimmy" );
         dataSource.setPassword( "Streetwise22@22");
+
         return dataSource;
     }
 //    @Bean
