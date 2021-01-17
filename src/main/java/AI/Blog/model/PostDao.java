@@ -1,5 +1,6 @@
 package AI.Blog.model;
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class PostDao {
@@ -7,10 +8,14 @@ public class PostDao {
     public PostDao() {
     }
 
-    public PostDao(final String content,final int views) {
+    public PostDao(int id, String content, int views, Date postCreationDate, Date postUpdatedDate) {
+        this.id = id;
         this.content = content;
         this.views = views;
+        this.postCreationDate = postCreationDate;
+        this.postUpdatedDate = postUpdatedDate;
     }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,6 +26,12 @@ public class PostDao {
 
     @Column(nullable = false)
     private int views;
+
+    @Column(nullable = false)
+    private Date postCreationDate;
+
+    @Column(nullable = false)
+    private Date postUpdatedDate;
 
 
     public String getContent() {
