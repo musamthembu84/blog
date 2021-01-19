@@ -5,6 +5,7 @@ import java.util.Date;
 @Entity
 public class PostDao {
 
+
     public PostDao() {
     }
 
@@ -32,6 +33,9 @@ public class PostDao {
     @Column(nullable = false)
     private Date post_updated_date;
 
+    public void setViews(int views) {
+        this.views = views;
+    }
 
     public void setPost_creation_date(Date post_creation_date) {
         this.post_creation_date = post_creation_date;

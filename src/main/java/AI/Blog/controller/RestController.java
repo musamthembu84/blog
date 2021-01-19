@@ -21,8 +21,6 @@ public class RestController {
 
     @PostMapping(path = "/posting")
     public ResponseEntity<Object> createPost(final @RequestBody PostDao postDao) {
-        postDao.setPost_creation_date(new Date());
-        postDao.setPost_updated_date(new Date());
         return postService.createPost(postDao);
     }
 
