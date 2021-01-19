@@ -11,4 +11,9 @@ public class LikesDao {
 
     @Column(nullable = false)
     private int counter;
+
+    @ManyToOne
+    @JoinColumn(name = "post_id",nullable = false)
+    private PostDao postDao;
+
 }

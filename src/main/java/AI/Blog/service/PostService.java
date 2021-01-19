@@ -1,7 +1,6 @@
 package AI.Blog.service;
 
 import AI.Blog.exception.ApplicationException;
-import AI.Blog.exception.ValidationException;
 import AI.Blog.model.PostDao;
 import AI.Blog.repository.PostRepository;
 import AI.Blog.response.SuccessMessageResponse;
@@ -9,8 +8,6 @@ import com.google.common.base.Preconditions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-
-import java.io.IOException;
 import java.util.Date;
 
 @Service
@@ -29,7 +26,7 @@ public class PostService implements IPost{
     @Override
     public ResponseEntity<Object> createPost(final PostDao postDao) throws ApplicationException{
 
-        Preconditions.checkArgument(postDao.getContent()!=null);
+        Preconditions.checkArgument(postDao.getContent()!=null,"Posting content cannot be empty");
         settingDefaultValues(postDao);
 
         postRepository.save(postDao);

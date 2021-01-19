@@ -1,6 +1,7 @@
 package AI.Blog.model;
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 public class PostDao {
@@ -19,7 +20,7 @@ public class PostDao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int post_id;
 
     @Column(nullable = false)
     private String content;
@@ -32,6 +33,10 @@ public class PostDao {
 
     @Column(nullable = false)
     private Date post_updated_date;
+
+    @OneToMany(mappedBy = "postDao")
+    private Set<LikesDao> likes;
+
 
     public void setViews(int views) {
         this.views = views;
