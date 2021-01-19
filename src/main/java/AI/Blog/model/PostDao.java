@@ -53,4 +53,5 @@ public class PostDao {
     public String getContent() {
         return content;
     }
+
 }
