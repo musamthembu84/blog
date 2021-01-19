@@ -20,13 +20,15 @@ public class RestController {
     }
 
     @PostMapping(path = "/posting")
-    public ResponseEntity<Object> createPost(@RequestBody PostDao postDao) {
+    public ResponseEntity<Object> createPost(final @RequestBody PostDao postDao) {
+        postDao.setPost_creation_date(new Date());
+        postDao.setPost_updated_date(new Date());
         return postService.createPost(postDao);
     }
 
     @GetMapping(path = "/likes")
     public String likes(){
-        PostDao postDao  = new PostDao("sd",0, new Date(),new Date());
+        PostDao postDao  = new PostDao("sd",0, new java.util.Date(),new java.util.Date());
         postService.createPost(postDao);
         return "haha";
     }

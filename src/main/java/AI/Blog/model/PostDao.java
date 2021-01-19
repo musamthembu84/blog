@@ -8,11 +8,11 @@ public class PostDao {
     public PostDao() {
     }
 
-    public PostDao(final String content, int views, final Date postCreationDate,final Date postUpdatedDate) {
+    public PostDao(final String content, int views, final Date post_creation_date, final Date post_updated_date) {
         this.content = content;
         this.views = views;
-        this.postCreationDate = postCreationDate;
-        this.postUpdatedDate = postUpdatedDate;
+        this.post_creation_date = post_creation_date;
+        this.post_updated_date = post_updated_date;
     }
 
 
@@ -27,11 +27,19 @@ public class PostDao {
     private int views;
 
     @Column(nullable = false)
-    private Date postCreationDate;
+    private Date post_creation_date;
 
     @Column(nullable = false)
-    private Date postUpdatedDate;
+    private Date post_updated_date;
 
+
+    public void setPost_creation_date(Date post_creation_date) {
+        this.post_creation_date = post_creation_date;
+    }
+
+    public void setPost_updated_date(Date post_updated_date) {
+        this.post_updated_date = post_updated_date;
+    }
 
     public String getContent() {
         return content;
