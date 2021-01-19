@@ -8,8 +8,7 @@ public class PostDao {
     public PostDao() {
     }
 
-    public PostDao(int id, String content, int views, Date postCreationDate, Date postUpdatedDate) {
-        this.id = id;
+    public PostDao(final String content, int views, final Date postCreationDate,final Date postUpdatedDate) {
         this.content = content;
         this.views = views;
         this.postCreationDate = postCreationDate;
