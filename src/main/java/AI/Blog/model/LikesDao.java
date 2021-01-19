@@ -8,8 +8,7 @@ public class LikesDao {
     public LikesDao() {
     }
 
-    public LikesDao(final Integer id,final int counter,final PostDao postDao) {
-        this.id = id;
+    public LikesDao(final int counter,final PostDao postDao) {
         this.counter = counter;
         this.postDao = postDao;
     }
