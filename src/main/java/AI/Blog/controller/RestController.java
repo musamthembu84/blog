@@ -3,6 +3,7 @@ import AI.Blog.exception.ApplicationException;
 import AI.Blog.model.PostDao;
 import AI.Blog.service.impl.LikeService;
 import AI.Blog.service.impl.PostService;
+import AI.Blog.service.impl.ViewService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,12 +14,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
 
-    private PostService postService;
-    private LikeService likeService;
+    private final PostService postService;
+    private final LikeService likeService;
+    private final ViewService viewService;
+
     @Autowired
-    public RestController(final PostService postService, final LikeService likeService) {
+    public RestController(final PostService postService,
+                          final LikeService likeService,
+                          final ViewService viewService) {
         this.postService = postService;
         this.likeService = likeService;
+        this.viewService = viewService;
     }
 
     @PostMapping(path = "/posting")
@@ -31,13 +37,13 @@ public class RestController {
         return likeService.incrementLike(id);
     }
 
-    @GetMapping(path = "/likePost")
-    public String getPostId(@RequestParam int id){
-        return "ID" + id;
-    }
-
    @GetMapping(path = "/viewPostLike")
    public ResponseEntity<Object> viewPostLikes(final @RequestParam int id){
         return likeService.viewTotalLikes(id);
+   }
+
+   @GetMapping(path = "/totalViewsForPost")
+    public ResponseEntity<Object> viewsForPost(final @RequestParam int id){
+        return viewService.getViewForPost(id);
    }
 }

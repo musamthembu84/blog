@@ -49,7 +49,6 @@ public class PostService implements IPost {
         try {
             postDao.setPost_creation_date(new Date());
             postDao.setPost_updated_date(new Date());
-            postDao.setViews(0);
         }
         catch (Exception e){
             throw new ApplicationException("Error while getting content to be posted",e);
