@@ -38,4 +38,8 @@ public class RestController {
         return "ID" + id;
     }
 
+   @GetMapping(path = "/viewPostLike")
+   public ResponseEntity<Object> viewPostLikes(final @RequestParam int id){
+        return likeService.viewTotalLikes(id);
+   }
 }

@@ -21,7 +21,7 @@ public class LikeService implements ILikes{
 
     @Override
     public ResponseEntity<Object> incrementLike(final int postId) {
-        repository.save(new LikesDao(1,postingNewInstance(postId)));
+        repository.save(new LikesDao(postingNewInstance(postId)));
         return ResponseEntity.ok(SuccessMessageResponse.create("Like added"));
     }
 
