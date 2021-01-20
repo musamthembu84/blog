@@ -1,8 +1,7 @@
 package AI.Blog.service.impl;
 
 import AI.Blog.model.PostDao;
-import AI.Blog.model.ViewDao;
-import AI.Blog.repository.LikesRepository;
+import AI.Blog.model.ViewsDao;
 import AI.Blog.repository.ViewRepository;
 import AI.Blog.response.LikesResponseMessage;
 import AI.Blog.service.interaces.IViews;
@@ -27,7 +26,7 @@ public class ViewService implements IViews {
 
     @Override
     public ResponseEntity<Object> addViewForPost(final int postID) {
-        viewRepository.save(new ViewDao(createNewPostForView(postID)));
+        viewRepository.save(new ViewsDao(createNewPostForView(postID)));
         return ResponseEntity.ok().body(LikesResponseMessage.createMessage("View Added For Post" + postID));
     }
 

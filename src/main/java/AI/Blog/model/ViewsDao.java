@@ -3,12 +3,12 @@ package AI.Blog.model;
 import javax.persistence.*;
 
 @Entity
-public class ViewDao {
+public class ViewsDao {
 
-    public ViewDao() {
+    public ViewsDao() {
     }
 
-    public ViewDao(PostDao postDao) {
+    public ViewsDao(PostDao postDao) {
         this.postDao = postDao;
     }
 
