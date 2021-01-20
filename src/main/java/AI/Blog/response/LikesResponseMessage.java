@@ -4,7 +4,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class LikesResponseMessage {
 
-    @JsonProperty("Total Likes")
+    @JsonProperty("Total")
     private final String likes;
 
     private LikesResponseMessage(final String likes) {

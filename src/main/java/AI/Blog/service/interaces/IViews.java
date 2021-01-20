@@ -1,6 +1,8 @@
 package AI.Blog.service.interaces;
 
+import org.springframework.http.ResponseEntity;
+
 public interface IViews {
 
-    int getViewForPost();
+    ResponseEntity<Object> getViewForPost(final int postId);
 }
