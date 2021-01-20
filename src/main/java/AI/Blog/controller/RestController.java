@@ -42,6 +42,11 @@ public class RestController {
         return likeService.viewTotalLikes(id);
    }
 
+   @GetMapping(path = "/addPostView")
+   public ResponseEntity<Object> createView(final @RequestParam int id){
+        return viewService.addViewForPost(id);
+   }
+
    @GetMapping(path = "/totalViewsForPost")
     public ResponseEntity<Object> viewsForPost(final @RequestParam int id){
         return viewService.getViewForPost(id);
