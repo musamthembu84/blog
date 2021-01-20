@@ -10,7 +10,8 @@ public class PostDao {
     public PostDao() {
     }
 
-    public PostDao(final String content, int views, final Date post_creation_date, final Date post_updated_date) {
+    public PostDao(final int post_id,final String content, int views, final Date post_creation_date, final Date post_updated_date) {
+        this.post_id = post_id;
         this.content = content;
         this.views = views;
         this.post_creation_date = post_creation_date;
@@ -54,4 +55,7 @@ public class PostDao {
         return content;
     }
 
+    public int getPost_id() {
+        return post_id;
+    }
 }

@@ -8,6 +8,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import java.util.Date;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
@@ -25,10 +28,14 @@ public class RestController {
         return postService.createPost(postDao);
     }
 
-    @PostMapping(path= "/addLike")
-    public ResponseEntity<Object> addLike(){
+    @GetMapping(path= "/addLike")
+    public ResponseEntity<Object> addLike(@RequestParam int id){
+        return likeService.incrementLike(id);
+    }
 
-        return likeService.incrementLike(1);
+    @GetMapping(path = "/likePost")
+    public String getPostId(@RequestParam int id){
+        return "ID" + id;
     }
 
 }
