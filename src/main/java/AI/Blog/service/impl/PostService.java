@@ -1,9 +1,10 @@
-package AI.Blog.service;
+package AI.Blog.service.impl;
 
 import AI.Blog.exception.ApplicationException;
 import AI.Blog.model.PostDao;
 import AI.Blog.repository.PostRepository;
 import AI.Blog.response.SuccessMessageResponse;
+import AI.Blog.service.interaces.IPost;
 import com.google.common.base.Preconditions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,7 +12,7 @@ import org.springframework.stereotype.Service;
 import java.util.Date;
 
 @Service
-public class PostService implements IPost{
+public class PostService implements IPost {
 
     private static final String SUCCESS_MESSAGE = "Post Created Successfully";
     private static final String DELETE_MESSAGE = "Post Deleted Successfully";

@@ -1,16 +1,17 @@
-package AI.Blog.service;
+package AI.Blog.service.impl;
 
 import AI.Blog.model.LikesDao;
 import AI.Blog.model.PostDao;
 import AI.Blog.repository.LikesRepository;
 import AI.Blog.response.LikesResponseMessage;
 import AI.Blog.response.SuccessMessageResponse;
+import AI.Blog.service.interaces.ILikes;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 @Service
-public class LikeService implements ILikes{
+public class LikeService implements ILikes {
 
     private final LikesRepository repository;
 

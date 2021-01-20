@@ -10,14 +10,12 @@ public class PostDao {
     public PostDao() {
     }
 
-    public PostDao(final int post_id,final String content, int views, final Date post_creation_date, final Date post_updated_date) {
+    public PostDao(final int post_id,final String content, final Date post_creation_date, final Date post_updated_date) {
         this.post_id = post_id;
         this.content = content;
-        this.views = views;
         this.post_creation_date = post_creation_date;
         this.post_updated_date = post_updated_date;
     }
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,9 +25,6 @@ public class PostDao {
     private String content;
 
     @Column(nullable = false)
-    private int views;
-
-    @Column(nullable = false)
     private Date post_creation_date;
 
     @Column(nullable = false)
@@ -37,11 +32,6 @@ public class PostDao {
 
     @OneToMany(mappedBy = "postDao")
     private Set<LikesDao> likes;
-
-
-    public void setViews(int views) {
-        this.views = views;
-    }
 
     public void setPost_creation_date(Date post_creation_date) {
         this.post_creation_date = post_creation_date;
@@ -53,10 +43,6 @@ public class PostDao {
 
     public String getContent() {
         return content;
-    }
-
-    public int getPost_id() {
-        return post_id;
     }
 
     public void setPost_id(int post_id) {

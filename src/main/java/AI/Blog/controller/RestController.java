@@ -1,16 +1,14 @@
 package AI.Blog.controller;
 import AI.Blog.exception.ApplicationException;
 import AI.Blog.model.PostDao;
-import AI.Blog.service.LikeService;
-import AI.Blog.service.PostService;
+import AI.Blog.service.impl.LikeService;
+import AI.Blog.service.impl.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
-
-import java.util.Date;
 
 @org.springframework.web.bind.annotation.RestController
 public class RestController {

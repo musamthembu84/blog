@@ -1,6 +1,5 @@
-package AI.Blog.service;
+package AI.Blog.service.interaces;
 
-import AI.Blog.model.PostDao;
 import org.springframework.http.ResponseEntity;
 
 public interface ILikes {
