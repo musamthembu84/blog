@@ -15,19 +15,16 @@ import java.util.Date;
 public class LikeService implements ILikes{
 
     private LikesRepository repository;
-    private PostRepository postRepository;
 
     @Autowired
-    public LikeService(final LikesRepository repository, final PostRepository postRepository) {
+    public LikeService(final LikesRepository repository) {
         this.repository = repository;
-        this.postRepository = postRepository;
     }
 
     @Override
     public ResponseEntity<Object> incrementLike(final int postId) {
 
         PostDao postDao = new PostDao(postId,"haha",1,new Date(),new Date());
-
         repository.save(new LikesDao(1,postDao));
         return ResponseEntity.ok(SuccessMessageResponse.create("Like added"));
     }
