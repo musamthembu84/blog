@@ -7,7 +7,8 @@ public class SuccessMessageResponse {
     @JsonProperty("Message")
     private final String message;
 
-    private SuccessMessageResponse(String message) {
+
+    private SuccessMessageResponse(final String message) {
         this.message = message;
     }
 
