@@ -9,10 +9,9 @@ public class CommentDao {
     public CommentDao() {
     }
 
-    public CommentDao(String content, String author, Date commentDate, PostDao postDao) {
+    public CommentDao(final String content,final String author, final PostDao postDao) {
         this.content = content;
         this.author = author;
-        this.commentDate = commentDate;
         this.postDao = postDao;
     }
 

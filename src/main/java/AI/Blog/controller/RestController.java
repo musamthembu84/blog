@@ -1,6 +1,8 @@
 package AI.Blog.controller;
 import AI.Blog.exception.ApplicationException;
+import AI.Blog.model.CommentDao;
 import AI.Blog.model.PostDao;
+import AI.Blog.service.impl.CommentService;
 import AI.Blog.service.impl.LikeService;
 import AI.Blog.service.impl.PostService;
 import AI.Blog.service.impl.ViewService;
@@ -17,14 +19,17 @@ public class RestController {
     private final PostService postService;
     private final LikeService likeService;
     private final ViewService viewService;
+    private final CommentService commentService;
 
     @Autowired
     public RestController(final PostService postService,
                           final LikeService likeService,
-                          final ViewService viewService) {
+                          final ViewService viewService,
+                          final CommentService commentService) {
         this.postService = postService;
         this.likeService = likeService;
         this.viewService = viewService;
+        this.commentService = commentService;
     }
 
     @PostMapping(path = "/posting")
@@ -51,4 +56,9 @@ public class RestController {
     public ResponseEntity<Object> viewsForPost(final @RequestParam int id){
         return viewService.getViewForPost(id);
    }
+
+    @PostMapping(path="/createComment")
+    public ResponseEntity<Object> createComments(final @RequestBody CommentDao commentDao){
+        return commentService.createComment(commentDao,1);
+    }
 }

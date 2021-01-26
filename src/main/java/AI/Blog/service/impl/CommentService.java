@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
+
 @Service
 public class CommentService  implements IComment {
 
@@ -21,9 +23,11 @@ public class CommentService  implements IComment {
 
     @Override
     public ResponseEntity<Object> createComment(final CommentDao commentDao,int postID) {
+
+        Date comment_Date = new Date();
+        commentDao.setCommentDate(comment_Date);
         commentRepository.save(new CommentDao(commentDao.getContent(),
                                               commentDao.getAuthor(),
-                                              commentDao.getCommentDate(),
                                               createPostInstance(postID)));
 
         return ResponseEntity.ok().body(LikesResponseMessage.createMessage("Comment Created"));
