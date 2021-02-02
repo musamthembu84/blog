@@ -4,7 +4,7 @@ import AI.Blog.model.CommentDao;
 import AI.Blog.model.PostDao;
 import AI.Blog.repository.CommentRepository;
 import AI.Blog.response.LikesResponseMessage;
-import AI.Blog.service.interaces.IComment;
+import AI.Blog.service.interfaces.IComment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

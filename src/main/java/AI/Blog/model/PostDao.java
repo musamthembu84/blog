@@ -10,9 +10,10 @@ public class PostDao {
     public PostDao() {
     }
 
-    public PostDao(final int post_id,final String content, final Date post_creation_date, final Date post_updated_date) {
+    public PostDao(final int post_id,final String content,final String title, final Date post_creation_date, final Date post_updated_date) {
         this.post_id = post_id;
         this.content = content;
+        this.title = title;
         this.post_creation_date = post_creation_date;
         this.post_updated_date = post_updated_date;
     }
@@ -23,6 +24,9 @@ public class PostDao {
 
     @Column(nullable = false)
     private String content;
+
+    @Column(nullable = false)
+    private String title;
 
     @Column(nullable = false)
     private Date post_creation_date;
@@ -47,5 +51,13 @@ public class PostDao {
 
     public void setPost_id(int post_id) {
         this.post_id = post_id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
     }
 }

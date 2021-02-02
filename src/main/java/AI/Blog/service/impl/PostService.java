@@ -4,7 +4,7 @@ import AI.Blog.exception.ApplicationException;
 import AI.Blog.model.PostDao;
 import AI.Blog.repository.PostRepository;
 import AI.Blog.response.SuccessMessageResponse;
-import AI.Blog.service.interaces.IPost;
+import AI.Blog.service.interfaces.IPost;
 import com.google.common.base.Preconditions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

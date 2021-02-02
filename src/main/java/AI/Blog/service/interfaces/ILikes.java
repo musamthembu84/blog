@@ -1,4 +1,4 @@
-package AI.Blog.service.interaces;
+package AI.Blog.service.interfaces;
 
 import org.springframework.http.ResponseEntity;
 

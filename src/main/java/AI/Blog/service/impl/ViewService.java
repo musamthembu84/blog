@@ -4,7 +4,7 @@ import AI.Blog.model.PostDao;
 import AI.Blog.model.ViewsDao;
 import AI.Blog.repository.ViewRepository;
 import AI.Blog.response.LikesResponseMessage;
-import AI.Blog.service.interaces.IViews;
+import AI.Blog.service.interfaces.IViews;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package AI.Blog.service.interaces;
+package AI.Blog.service.interfaces;
 
 import AI.Blog.exception.ApplicationException;
 import AI.Blog.model.PostDao;

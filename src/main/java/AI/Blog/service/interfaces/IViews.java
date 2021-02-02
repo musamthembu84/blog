@@ -1,6 +1,5 @@
-package AI.Blog.service.interaces;
+package AI.Blog.service.interfaces;
 
-import AI.Blog.model.PostDao;
 import org.springframework.http.ResponseEntity;
 
 public interface IViews {

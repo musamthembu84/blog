@@ -1,4 +1,4 @@
-package AI.Blog.service.interaces;
+package AI.Blog.service.interfaces;
 
 import AI.Blog.model.CommentDao;
 import org.springframework.http.ResponseEntity;
