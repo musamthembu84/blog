@@ -43,6 +43,9 @@ public class PostService implements IPost {
                 .ok(SuccessMessageResponse.create(DELETE_MESSAGE));
     }
 
+    public ResponseEntity<Object> retrievePosts(){
+        return ResponseEntity.ok(postRepository.getPosts());
+    }
     private void settingDefaultValues(final PostDao postDao) throws ApplicationException{
         Preconditions.checkArgument(postDao!=null);
 

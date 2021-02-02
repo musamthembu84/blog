@@ -34,10 +34,13 @@ public class RestController {
 
     @PostMapping(path = "/posting")
     public ResponseEntity<Object> createPost(final @RequestBody PostDao postDao) throws ApplicationException {
-        System.out.printf("Title" + postDao.getTitle() + "Content" + postDao.getContent());
         return postService.createPost(postDao);
     }
 
+    @GetMapping(path = "/getPosts")
+    public ResponseEntity<Object> retrievalPosts(){
+        return postService.retrievePosts();
+    }
     @GetMapping(path= "/addLike")
     public ResponseEntity<Object> addLike(@RequestParam int id){
         return likeService.incrementLike(id);
