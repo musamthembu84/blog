@@ -36,7 +36,6 @@ public class PostService implements IPost {
         postRepository.save(postDao);
         return ResponseEntity
                 .ok(SuccessMessageResponse.create(SUCCESS_MESSAGE));
-
     }
 
     @Override
@@ -61,5 +60,4 @@ public class PostService implements IPost {
             throw new ApplicationException("Error while getting content to be posted",e);
         }
     }
-
 }
