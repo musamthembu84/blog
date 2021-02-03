@@ -9,7 +9,10 @@ import com.google.common.base.Preconditions;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class PostService implements IPost {
@@ -43,8 +46,9 @@ public class PostService implements IPost {
                 .ok(SuccessMessageResponse.create(DELETE_MESSAGE));
     }
 
-    public ResponseEntity<Object> retrievePosts(){
-        return ResponseEntity.ok(postRepository.getPosts());
+    @Override
+    public List<PostDao> retrievePosts(final int numberOfPost){
+        return postRepository.getPosts(numberOfPost);
     }
     private void settingDefaultValues(final PostDao postDao) throws ApplicationException{
         Preconditions.checkArgument(postDao!=null);

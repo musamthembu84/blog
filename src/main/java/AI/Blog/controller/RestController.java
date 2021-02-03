@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @org.springframework.web.bind.annotation.RestController
 public class RestController {
 
@@ -38,8 +40,8 @@ public class RestController {
     }
 
     @GetMapping(path = "/getPosts")
-    public ResponseEntity<Object> retrievalPosts(){
-        return postService.retrievePosts();
+    public List<PostDao> retrievalPosts(@RequestParam int numberOfPosts){
+        return postService.retrievePosts(numberOfPosts);
     }
     @GetMapping(path= "/addLike")
     public ResponseEntity<Object> addLike(@RequestParam int id){
