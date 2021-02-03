@@ -6,7 +6,6 @@ import java.util.Set;
 @Entity
 public class PostDao {
 
-
     public PostDao() {
     }
 
@@ -59,5 +58,13 @@ public class PostDao {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public Date getPost_creation_date() {
+        return post_creation_date;
+    }
+
+    public Date getPost_updated_date() {
+        return post_updated_date;
     }
 }
