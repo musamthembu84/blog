@@ -67,4 +67,8 @@ public class RestController {
     public ResponseEntity<Object> createComments(final @RequestBody CommentDao commentDao){
         return commentService.createComment(commentDao,1);
     }
+    
+    public ResponseEntity<Object> editComment(){
+        return null;
+    }
 }
