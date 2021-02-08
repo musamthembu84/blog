@@ -67,7 +67,8 @@ public class RestController {
     public ResponseEntity<Object> createComments(final @RequestBody CommentDao commentDao){
         return commentService.createComment(commentDao,1);
     }
-    
+
+    @GetMapping(path = "/editComment")
     public ResponseEntity<Object> editComment(){
         return null;
     }
