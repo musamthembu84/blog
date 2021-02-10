@@ -41,6 +41,12 @@ public class RestController {
     public List<PostDao> retrievalPosts(@RequestParam int numberOfPosts){
         return postService.retrievePosts(numberOfPosts);
     }
+
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping(value = "/singlePost")
+    public PostDao getSinglePost(@RequestParam final int postId){
+        return postService.getPost(postId);
+    }
     @GetMapping(path= "/addLike")
     public ResponseEntity<Object> addLike(@RequestParam int id){
         return likeService.incrementLike(id);

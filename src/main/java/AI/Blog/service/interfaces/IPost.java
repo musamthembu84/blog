@@ -10,4 +10,5 @@ public interface IPost {
     ResponseEntity<Object> createPost(final PostDao postDao) throws ApplicationException;
     ResponseEntity<Object> deletePost(final int postID);
     List<PostDao> retrievePosts(final int numberOfPosts);
+    PostDao getPost(final int postID);
 }

@@ -49,6 +49,12 @@ public class PostService implements IPost {
     public List<PostDao> retrievePosts(final int numberOfPost){
         return postRepository.getPosts(numberOfPost);
     }
+
+    @Override
+    public PostDao getPost(int postID) {
+        return postRepository.getSinglePost(postID);
+    }
+
     private void settingDefaultValues(final PostDao postDao) throws ApplicationException{
         Preconditions.checkArgument(postDao!=null);
 
