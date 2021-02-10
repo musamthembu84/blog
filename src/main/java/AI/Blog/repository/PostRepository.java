@@ -13,6 +13,6 @@ public interface PostRepository extends CrudRepository<PostDao,Integer>{
     @Query(value = "select * from post_dao order by post_creation_date desc", nativeQuery = true)
     List<PostDao> getPosts(final int numberOfPosts);
 
-    @Query(value = "select * from post_dao where id=:postID", nativeQuery = true)
+    @Query(value = "select * from post_dao where post_id=:postID", nativeQuery = true)
     PostDao getSinglePost(final int postID);
 }
