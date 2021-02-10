@@ -30,7 +30,7 @@ public class RestController {
         this.viewService = viewService;
         this.commentService = commentService;
     }
-
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping(path = "/posting")
     public ResponseEntity<Object> createPost(final @RequestBody PostDao postDao) throws ApplicationException {
         return postService.createPost(postDao);
