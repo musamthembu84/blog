@@ -81,4 +81,8 @@ public class PostDao {
     public void setSub_content(String sub_content) {
         this.sub_content = sub_content;
     }
+
+    public int getPost_id() {
+        return post_id;
+    }
 }
