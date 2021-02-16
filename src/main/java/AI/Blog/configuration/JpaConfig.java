@@ -22,7 +22,9 @@ public class JpaConfig {
     public JpaConfig(final Environment env) {
         this.env = env;
     }
-
+    public JpaConfig() {
+        
+    }
     @Bean
     public DataSource dataSource(){
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
