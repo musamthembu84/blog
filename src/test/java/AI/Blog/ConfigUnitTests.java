@@ -1,7 +1,6 @@
 package AI.Blog;
 
 import AI.Blog.configuration.JpaConfig;
-import AI.Blog.model.PostDao;
 import AI.Blog.repository.PostRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,7 +10,6 @@ import org.springframework.test.context.support.AnnotationConfigContextLoader;
 
 import javax.annotation.Resource;
 import javax.transaction.Transactional;
-import java.util.Date;
 
 //import static junit.framework.TestCase.assertEquals;
 
